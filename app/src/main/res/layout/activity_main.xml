@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#554E4E">
 
     <TextView
         android:id="@+id/firstNumber"
@@ -15,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
         android:textSize="12pt"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
 
 
     <TextView
@@ -27,7 +28,7 @@
         app:layout_constraintTop_toTopOf="@id/firstNumber"
         android:gravity="center"
         android:textSize="12pt"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         />
 
     <TextView
@@ -39,7 +40,7 @@
         app:layout_constraintTop_toTopOf="@id/secondNumber"
         android:gravity="center"
         android:textSize="12pt"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         />
 
     <TableLayout

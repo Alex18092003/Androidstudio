@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button divide;
     Button clear;
     Button equals;
+    Button button2;
 
     String act;
     boolean fnum;
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         act = "";
         fnum = true;
         actt = "";
+
+        button2 = findViewById(R.id.button2);
 
         firstNumber = findViewById(R.id.firstNumber);
         secondNumber = findViewById(R.id.secondNumber);
@@ -82,7 +86,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         divide.setOnClickListener(this);
         clear.setOnClickListener(this);
         equals.setOnClickListener(this);
-
+        button2.setOnClickListener(view ->
+        {
+            Intent intent = new Intent(MainActivity.this, Math.class);
+            startActivity(intent);
+        });
     }
 
     @Override
