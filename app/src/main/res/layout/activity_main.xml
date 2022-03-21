@@ -260,9 +260,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/transfer"
             android:background="@drawable/button_style"
-            android:text="Переход"
+            android:text="..."
             android:textColor="@color/white"
             android:layout_gravity="center"
+            android:onClick="Click"
              />
     </TableLayout>
 

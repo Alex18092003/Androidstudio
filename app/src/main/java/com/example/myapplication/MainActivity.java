@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fnum = true;
         actt = "";
 
-        transfer = findViewById(R.id.transfer);
+        //*transfer = findViewById(R.id.transfer);
 
         firstNumber = findViewById(R.id.firstNumber);
         secondNumber = findViewById(R.id.secondNumber);
@@ -86,11 +86,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         divide.setOnClickListener(this);
         clear.setOnClickListener(this);
         equals.setOnClickListener(this);
-        transfer.setOnClickListener(view ->
-        {
-            Intent intent = new Intent(MainActivity.this, Math.class);
-            startActivity(intent);
-        });
+        //*transfer.setOnClickListener(view ->
+        //*{
+            //*Intent intent = new Intent(MainActivity.this, Math.class);
+           //* startActivity(intent);
+       //* });
     }
 
     @Override
@@ -166,10 +166,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-/*
+
     public void Click(View view) {
         Intent intent=new Intent(MainActivity.this,Math.class);
         //Запускаем его при нажатии:
         startActivity(intent);
-    }*/
+    }
 }
