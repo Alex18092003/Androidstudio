@@ -255,6 +255,15 @@
                 android:backgroundTintMode="add"
                 android:text="/" />
         </TableRow>
+        <android.widget.Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/transfer"
+            android:background="@drawable/button_style"
+            android:text="Переход"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+             />
     </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
