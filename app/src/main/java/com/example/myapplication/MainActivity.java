@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button divide;
     Button clear;
     Button equals;
-    Button transfer;
+   // Button transfer;
 
     String act;
     boolean fnum;
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fnum = true;
         actt = "";
 
-        //*transfer = findViewById(R.id.transfer);
+
 
         firstNumber = findViewById(R.id.firstNumber);
         secondNumber = findViewById(R.id.secondNumber);
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         divide = findViewById(R.id.divide);
         clear = findViewById(R.id.clear);
         equals = findViewById(R.id.equals);
+        //transfer = findViewById(R.id.transfer);
 
         zero.setOnClickListener(this);
         one.setOnClickListener(this);
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         divide.setOnClickListener(this);
         clear.setOnClickListener(this);
         equals.setOnClickListener(this);
+        //transfer.setOnClickListener(this);
         //*transfer.setOnClickListener(view ->
         //*{
             //*Intent intent = new Intent(MainActivity.this, Math.class);

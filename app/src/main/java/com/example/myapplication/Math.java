@@ -30,11 +30,11 @@ public class Math extends AppCompatActivity implements View.OnClickListener {
     Button cos;
     Button clear1;
     Button equals1;
-    Button transfer1;
+    //Button transfer1;
 
     String act1;
     boolean fnum1;
-    String actt1;
+    int indent;
 
 
     @Override
@@ -44,7 +44,7 @@ public class Math extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_math);
         act1 = "";
         fnum1 = true;
-        actt1 = "";
+
 
         firstNumber1 = findViewById(R.id.firstNumber1);
         secondNumber1 = findViewById(R.id.secondNumber1);
@@ -66,6 +66,7 @@ public class Math extends AppCompatActivity implements View.OnClickListener {
         cos = findViewById(R.id.cos);
         clear1 = findViewById(R.id.clear1);
         equals1 = findViewById(R.id.equals1);
+        //transfer1 = findViewById(R.id.transfer1);
 
         zero1.setOnClickListener(this);
         one1.setOnClickListener(this);
@@ -83,6 +84,7 @@ public class Math extends AppCompatActivity implements View.OnClickListener {
         cos.setOnClickListener(this);
         clear1.setOnClickListener(this);
         equals1.setOnClickListener(this);
+        //transfer1.setOnClickListener(this);
 
 
     }
@@ -112,12 +114,12 @@ public class Math extends AppCompatActivity implements View.OnClickListener {
                     secondNumber1.setText(numText);
                 }
                 break;
-            //case R.id.sqrt:
+            case R.id.sqrt:
+            case R.id.cos:
+            case R.id.sin:
             case R.id.pow:
-            //case R.id.sin:
-            //case R.id.cos:
                 Button button1 = (Button) view;
-                actt1 = button1.getText().toString();
+                indent = view.getId();
                 if (act1 == button1.getText().toString()) {
                     act1 = button1.getText().toString();
                     if (!fnum1) {
@@ -128,45 +130,34 @@ public class Math extends AppCompatActivity implements View.OnClickListener {
                 }
                 break;
 
-                case R.id.sqrt:
-                //case R.id.pow:
-                case R.id.sin:
-                case R.id.cos:
-                Button button2 = (Button) view;
-                //actt1 = button2.getText().toString();
-                if (act1 == button2.getText().toString())
-                {
-                    //act1 = button2.getText().toString();
-                    if (!fnum1) {
-                        fnum1 = !fnum1;
-                    }
-                } else {
-                    fnum1 = !fnum1;
-                }
-                break;
-
             case R.id.equals1:
-                //double num1 = Float.valueOf(firstNumber1.getText().toString());
-                double  num2 = Float.valueOf(secondNumber1.getText().toString());
-                switch(actt1) {
-                    case ("√"):
-                        double  res = java.lang.Math.sqrt(num2);
+                switch(indent) {
+                    case R.id.sqrt:
+                        float num1 = Float.valueOf(firstNumber1.getText().toString());
+                        float num6 = Float.valueOf(secondNumber1.getText().toString());
+                        double  res = java.lang.Math.pow(num6,1/num1);
                         result1.setText(String.valueOf(res));
                         break;
-                    //case ("^"):
-                        //double  res2 = java.lang.Math.pow(num1,num2);
-                        //result1.setText(String.valueOf(res2));
-                        //break;
-                    case ("sin"):
-                        double  res3 = java.lang.Math.sin(num2);
+                    case R.id.pow:
+                        float num2 = Float.valueOf(firstNumber1.getText().toString());
+                        float num3 = Float.valueOf(secondNumber1.getText().toString());
+                        double  res2 = java.lang.Math.pow(num2,num3);
+                        result1.setText(String.valueOf(res2));
+                        break;
+                    case R.id.sin:
+                        float num4 = Float.valueOf(firstNumber1.getText().toString());
+                        double  res3 = java.lang.Math.sin(java.lang.Math.toRadians(num4));
                         result1.setText(String.valueOf(res3));
                         break;
-                    case ("cos"):
-                        double  res4 = java.lang.Math.cos(num2);
+                    case R.id.cos:
+                        float num5 = Float.valueOf(firstNumber1.getText().toString());
+                        double  res4 = java.lang.Math.cos(java.lang.Math.toRadians(num5));
                         result1.setText(String.valueOf(res4));
                         break;
                 }
                 break;
+
+
             case R.id.clear1:
                 firstNumber1.setText("");
                 secondNumber1.setText("");
@@ -178,7 +169,7 @@ public class Math extends AppCompatActivity implements View.OnClickListener {
 
 
     public void Click(View view) {
-        Intent intent=new Intent(Math.this,MainActivity.class);
+        Intent intent =new Intent(Math.this,MainActivity.class);
         //Запускаем его при нажатии:
         startActivity(intent);
     }
