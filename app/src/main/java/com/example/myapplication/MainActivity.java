@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     String act;
     boolean fnum;
+
+
+
     String actt;
 
     @Override
@@ -120,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     secondNumber.setText(numText);
                 }
                 break;
+
             case R.id.plus:
             case R.id.minus:
             case R.id.multiply:
@@ -134,9 +138,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } else {
                     fnum = !fnum;
                 }
-
-
                 break;
+
+
             case R.id.equals:
                 float num1 = Float.valueOf(firstNumber.getText().toString());
                 float num2 = Float.valueOf(secondNumber.getText().toString());
