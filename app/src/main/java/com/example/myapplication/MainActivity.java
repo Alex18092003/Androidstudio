@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.io.StringReader;
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     String actt;
 
+    Spinner spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +77,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clear = findViewById(R.id.clear);
         equals = findViewById(R.id.equals);
         //transfer = findViewById(R.id.transfer);
+        spinner = findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(MainActivity.this, );
 
         zero.setOnClickListener(this);
         one.setOnClickListener(this);
@@ -90,12 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         divide.setOnClickListener(this);
         clear.setOnClickListener(this);
         equals.setOnClickListener(this);
-        //transfer.setOnClickListener(this);
-        //*transfer.setOnClickListener(view ->
-        //*{
-            //*Intent intent = new Intent(MainActivity.this, Math.class);
-           //* startActivity(intent);
-       //* });
+        //spinner.setOnClickListener(this);
     }
 
     @Override

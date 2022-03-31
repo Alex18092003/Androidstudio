@@ -11,12 +11,12 @@
         android:id="@+id/firstNumber"
         android:layout_width="0dp"
         android:layout_height="100dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="12pt"
         app:layout_constraintEnd_toStartOf="@id/secondNumber"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center"
-        android:textSize="12pt"
-        android:textColor="@color/white"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
@@ -41,6 +41,15 @@
         android:textSize="12pt"
         android:textColor="@color/white"
         />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="52dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTable"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TableLayout
         android:id="@+id/buttonTable"
