@@ -42,6 +42,15 @@
         android:textSize="12pt"
         android:textColor="@color/white"
         />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="52dp"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTable"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TableLayout
         android:id="@+id/buttonTable"

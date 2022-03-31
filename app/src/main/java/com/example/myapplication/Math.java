@@ -3,8 +3,10 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,6 +37,9 @@ public class Math extends AppCompatActivity implements View.OnClickListener {
     String act1;
     boolean fnum1;
     int indent;
+
+    Spinner spinner;
+    String[] str_array;
 
 
     @Override
@@ -85,6 +90,17 @@ public class Math extends AppCompatActivity implements View.OnClickListener {
         clear1.setOnClickListener(this);
         equals1.setOnClickListener(this);
         //transfer1.setOnClickListener(this);
+        str_array= new String[10];
+        spinner = findViewById(R.id.spinner);
+        str_array[0] = "История";
+        for(int i=1; i< str_array.length; i++){
+            str_array[i]=" ";
+        }
+
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, str_array);
+        //ArrayAdapter<CharSequence> adapter2= ArrayAdapter.createFromResource(MainActivity.this, str_array ,android.R.layout.simple_spinner_item);
+        spinner.setAdapter(adapter1);
+
 
 
     }
@@ -137,22 +153,42 @@ public class Math extends AppCompatActivity implements View.OnClickListener {
                         float num6 = Float.valueOf(secondNumber1.getText().toString());
                         double  res = java.lang.Math.pow(num6,1/num1);
                         result1.setText(String.valueOf(res));
+                        for (int i = 3; i >= 0; i--)
+                        {
+                            str_array[i+1] = str_array[i];
+                        }
+                        str_array[0] = String.valueOf(res);
                         break;
                     case R.id.pow:
                         float num2 = Float.valueOf(firstNumber1.getText().toString());
                         float num3 = Float.valueOf(secondNumber1.getText().toString());
                         double  res2 = java.lang.Math.pow(num2,num3);
                         result1.setText(String.valueOf(res2));
+                        for (int i = 3; i >= 0; i--)
+                        {
+                            str_array[i+1] = str_array[i];
+                        }
+                        str_array[0] = String.valueOf(res2);
                         break;
                     case R.id.sin:
                         float num4 = Float.valueOf(firstNumber1.getText().toString());
                         double  res3 = java.lang.Math.sin(java.lang.Math.toRadians(num4));
                         result1.setText(String.valueOf(res3));
+                        for (int i = 3; i >= 0; i--)
+                        {
+                            str_array[i+1] = str_array[i];
+                        }
+                        str_array[0] = String.valueOf(res3);
                         break;
                     case R.id.cos:
                         float num5 = Float.valueOf(firstNumber1.getText().toString());
                         double  res4 = java.lang.Math.cos(java.lang.Math.toRadians(num5));
                         result1.setText(String.valueOf(res4));
+                        for (int i = 3; i >= 0; i--)
+                        {
+                            str_array[i+1] = str_array[i];
+                        }
+                        str_array[0] = String.valueOf(res4);
                         break;
                 }
                 break;
