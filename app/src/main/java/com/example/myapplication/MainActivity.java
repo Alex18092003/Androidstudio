@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String actt;
 
     Spinner spinner;
+    String[] str_array;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +78,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clear = findViewById(R.id.clear);
         equals = findViewById(R.id.equals);
         //transfer = findViewById(R.id.transfer);
+        str_array= new String[10];
         spinner = findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(MainActivity.this, );
+        str_array[0] = "История";
+        for(int i=1; i< str_array.length; i++){
+            str_array[i]=" ";
+        }
+
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, str_array);
+        //ArrayAdapter<CharSequence> adapter2= ArrayAdapter.createFromResource(MainActivity.this, str_array ,android.R.layout.simple_spinner_item);
+        spinner.setAdapter(adapter1);
 
         zero.setOnClickListener(this);
         one.setOnClickListener(this);
@@ -149,18 +158,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 case ("+"):
                     float res = num1 + num2;
                     result.setText(String.valueOf(res));
+                    for (int i = 3; i >= 0; i--)
+                    {
+                        str_array[i+1] = str_array[i];
+                    }
+                    str_array[0] = String.valueOf(res);
                     break;
                 case ("-"):
                     float res2 = num1 - num2;
                     result.setText(String.valueOf(res2));
+                    for (int i = 3; i >= 0; i--)
+                    {
+                        str_array[i+1] = str_array[i];
+                    }
+                    str_array[0] = String.valueOf(res2);
                     break;
                 case ("*"):
                     float res3 = num1 * num2;
                     result.setText(String.valueOf(res3));
+                    for (int i = 3; i >= 0; i--)
+                    {
+                        str_array[i+1] = str_array[i];
+                    }
+                    str_array[0] = String.valueOf(res3);
                     break;
                 case ("/"):
                     float res4 = num1 / num2;
                     result.setText(String.valueOf(res4));
+                    for (int i = 3; i >= 0; i--)
+                    {
+                        str_array[i+1] = str_array[i];
+                    }
+                    str_array[0] = String.valueOf(res4);
                     break;
             }
             break;

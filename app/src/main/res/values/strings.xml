@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string_array name="spinner_array">
-        <item></item>
-    </string_array>
+
 </resources>
